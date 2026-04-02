@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retorno Mensurável do Indivíduo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 Retorno Mensurável do Indivíduo</h1>
+            <p>Modelo matemático: Vᵢ = α·R_edu + β·E + γ·G</p>
+            <p class="sub">Avaliação algorítmica no capitalismo moderno</p>
+        </header>
+        
+        <div class="main-grid">
+            <!-- Painel de entrada de dados -->
+            <div class="form-card">
+                <h3>📝 Dados do Indivíduo</h3>
+                
+                <label>💰 Custo educacional (R$):
+                    <input type="number" id="custoEdu" value="50000" step="1000">
+                </label>
+                
+                <label>🎓 Salário c/ educação (R$/ano):
+                    <input type="number" id="salarioEduc" value="48000" step="1000">
+                </label>
+                
+                <label>📉 Salário s/ educação (R$/ano):
+                    <input type="number" id="salarioBase" value="24000" step="1000">
+                </label>
+                
+                <label>📈 Empregabilidade (0-1):
+                    <input type="range" id="empregabilidade" min="0" max="1" step="0.01" value="0.70">
+                    <span id="empValue" class="range-value">0.70</span>
+                </label>
+                
+                <label>⚙️ Valor mensurável G (ex: R$/hora):
+                    <input type="number" id="valorG" value="30.0" step="1.0">
+                </label>
+                
+                <hr>
+                
+                <h3>⚖️ Pesos do Sistema (α + β + γ = 1)</h3>
+                <label>α (peso do R_edu):
+                    <input type="number" id="alpha" value="0.20" step="0.05">
+                </label>
+                <label>β (peso da Empregabilidade):
+                    <input type="number" id="beta" value="0.30" step="0.05">
+                </label>
+                <label>γ (peso do Valor G):
+                    <input type="number" id="gamma" value="0.50" step="0.05">
+                </label>
+                
+                <hr>
+                
+                <label>⚠️ Limiar de descartabilidade (V_min):
+                    <input type="number" id="vmin" value="15.0" step="0.5">
+                </label>
+                
+                <button id="calcular">🔢 Calcular / Atualizar Vᵢ</button>
+            </div>
+            
+            <!-- Painel de resultados -->
+            <div class="results-card">
+                <h3>📈 Resultado da Avaliação</h3>
+                
+                <div class="vi-box">
+                    <span>Valor Individual (Vᵢ)</span>
+                    <div class="vi-number" id="viDisplay">—</div>
+                </div>
+                
+                <div id="statusBadge"></div>
+                <div id="alertMsg"></div>
+                
+                <hr>
+                
+                <div class="details">
+                    <p><strong>📚 R_edu</strong> (retorno educacional) = <span id="rEdu">—</span></p>
+                    <p><strong>🤝 E</strong> (empregabilidade) = <span id="eVal">—</span></p>
+                    <p><strong>⚡ G</strong> (valor mensurável) = <span id="gVal">—</span></p>
+                    <p><strong>🔹 α·R_edu</strong> = <span id="termA">—</span></p>
+                    <p><strong>🔹 β·E</strong> = <span id="termB">—</span></p>
+                    <p><strong>🔹 γ·G</strong> = <span id="termC">—</span></p>
+                </div>
+                
+                <div class="critical-note">
+                    💡 A subjetividade e dignidade não entram na equação. Apenas o retorno mensurável importa para o algoritmo.
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Modelo baseado no texto: "algoritmos, métricas e narrativas de eficiência" — do chicote à métrica de desempenho.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
